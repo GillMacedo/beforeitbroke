@@ -1,0 +1,108 @@
+{
+ "items": [
+  {
+   "metadata": {
+    "name": "checkout",
+    "namespace": "shop"
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/checkout:1.9.0"
+       }
+      ]
+     }
+    }
+   },
+   "status": {
+    "conditions": [
+     {
+      "type": "Progressing",
+      "lastUpdateTime": "2026-11-01T14:22:00Z"
+     }
+    ]
+   }
+  },
+  {
+   "metadata": {
+    "name": "search",
+    "namespace": "shop"
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/search:3.1.0"
+       }
+      ]
+     }
+    }
+   },
+   "status": {
+    "conditions": [
+     {
+      "type": "Progressing",
+      "lastUpdateTime": "2026-11-01T14:05:00Z"
+     }
+    ]
+   }
+  },
+  {
+   "metadata": {
+    "name": "quiet",
+    "namespace": "shop"
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/quiet:1"
+       }
+      ]
+     }
+    }
+   },
+   "status": {
+    "conditions": [
+     {
+      "type": "Progressing",
+      "lastUpdateTime": "2026-10-01T00:00:00Z"
+     }
+    ]
+   }
+  },
+  {
+   "metadata": {
+    "name": "billing",
+    "namespace": "shop"
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/billing:1.0.0"
+       }
+      ]
+     }
+    }
+   },
+   "status": {
+    "conditions": [
+     {
+      "type": "Progressing",
+      "lastUpdateTime": "2026-11-01T14:25:00Z"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "items": [
+  {
+   "metadata": {
+    "name": "checkout-1",
+    "namespace": "shop",
+    "creationTimestamp": "2026-10-20T09:00:00Z",
+    "annotations": {
+     "deployment.kubernetes.io/revision": "1"
+    },
+    "ownerReferences": [
+     {
+      "kind": "Deployment",
+      "name": "checkout"
+     }
+    ]
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/checkout:1.8.0",
+        "env": [
+         {
+          "name": "PAYMENT_TIMEOUT",
+          "value": "made-up-old-value"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "metadata": {
+    "name": "checkout-2",
+    "namespace": "shop",
+    "creationTimestamp": "2026-11-01T14:21:30Z",
+    "annotations": {
+     "deployment.kubernetes.io/revision": "2"
+    },
+    "ownerReferences": [
+     {
+      "kind": "Deployment",
+      "name": "checkout"
+     }
+    ]
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/checkout:1.9.0",
+        "env": [
+         {
+          "name": "PAYMENT_TIMEOUT",
+          "value": "made-up-new-value"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "metadata": {
+    "name": "orphan",
+    "namespace": "shop",
+    "creationTimestamp": "2026-11-01T14:00:00Z"
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "x",
+        "env": []
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "metadata": {
+    "name": "billing-old",
+    "namespace": "shop",
+    "creationTimestamp": "2026-10-20T09:00:00Z",
+    "annotations": {
+     "deployment.kubernetes.io/revision": "3"
+    },
+    "ownerReferences": [
+     {
+      "kind": "Deployment",
+      "name": "billing"
+     }
+    ]
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/billing:1.0.0"
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "metadata": {
+    "name": "billing-new",
+    "namespace": "shop",
+    "creationTimestamp": "2026-11-01T14:00:00Z",
+    "annotations": {
+     "deployment.kubernetes.io/revision": "2"
+    },
+    "ownerReferences": [
+     {
+      "kind": "Deployment",
+      "name": "billing"
+     }
+    ]
+   },
+   "spec": {
+    "template": {
+     "spec": {
+      "containers": [
+       {
+        "name": "app",
+        "image": "registry.example.com/billing:1.1.0"
+       }
+      ]
+     }
+    }
+   }
+  }
+ ]
+}

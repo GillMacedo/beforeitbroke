@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""Stands in for gh in tests and the demo: serves made-up API responses from tests/fixtures."""
+import json, os, re, sys
+from pathlib import Path
+
+args = sys.argv[1:]
+if os.environ.get("FAKE_LOG"):
+    with open(os.environ["FAKE_LOG"], "a") as log:
+        log.write("gh " + " ".join(args) + "\n")
+path = args[1]
+per_page = int(re.search(r"per_page=(\d+)", path).group(1))
+endpoint = re.sub(r"^repos/[^/]+/[^/]+/", "", path).split("?")[0]
+if re.fullmatch(r"deployments/\d+/statuses", endpoint):
+    print(json.dumps([{"state": "success"}]))
+    sys.exit(0)
+if os.environ.get("FAKE_FULL_PAGE") == endpoint:
+    print(json.dumps([{"id": n, "created_at": "2026-11-01T14:00:00Z", "environment": "prod", "ref": "main"} for n in range(per_page)]))
+    sys.exit(0)
+fixture = Path(__file__).resolve().parent.parent / "fixtures" / "github" / f"{endpoint}.json"
+print(fixture.read_text())

@@ -1,0 +1,35 @@
+{
+ "items": [
+  {
+   "metadata": {
+    "name": "checkout-config",
+    "namespace": "shop",
+    "managedFields": [
+     {
+      "manager": "kubectl-edit",
+      "time": "2026-11-01T14:10:00Z"
+     },
+     {
+      "manager": "helm",
+      "time": "2026-09-01T00:00:00Z"
+     }
+    ]
+   },
+   "data": {
+    "token": "made-up-configmap-value"
+   }
+  },
+  {
+   "metadata": {
+    "name": "kube-root-ca.crt",
+    "namespace": "shop",
+    "managedFields": [
+     {
+      "manager": "kube-controller-manager",
+      "time": "2026-11-01T14:11:00Z"
+     }
+    ]
+   }
+  }
+ ]
+}

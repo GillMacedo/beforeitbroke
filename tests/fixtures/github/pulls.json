@@ -1,0 +1,21 @@
+[
+ {
+  "number": 42,
+  "title": "Lower payment timeout",
+  "user": {
+   "login": "demo-dev"
+  },
+  "merged_at": "2026-11-01T13:55:00Z",
+  "updated_at": "2026-11-01T13:55:00Z",
+  "merge_commit_sha": "feedbeef00112233"
+ },
+ {
+  "number": 41,
+  "title": "Closed without merging",
+  "user": {
+   "login": "demo-dev"
+  },
+  "merged_at": null,
+  "updated_at": "2026-11-01T14:00:00Z"
+ }
+]

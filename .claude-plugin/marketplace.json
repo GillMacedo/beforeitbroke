@@ -1,0 +1,14 @@
+{
+  "name": "beforeitbroke-marketplace",
+  "description": "Marketplace for beforeitbroke, which shows what changed before an incident.",
+  "owner": {
+    "name": "Giulliano Macedo"
+  },
+  "plugins": [
+    {
+      "name": "beforeitbroke",
+      "source": "./plugin",
+      "description": "Incident timeline of what changed before production broke, from git, GitHub and Kubernetes. Read-only."
+    }
+  ]
+}

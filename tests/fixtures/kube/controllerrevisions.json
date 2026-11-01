@@ -1,0 +1,60 @@
+{
+ "items": [
+  {
+   "metadata": {
+    "name": "cache-1",
+    "namespace": "shop",
+    "creationTimestamp": "2026-10-01T00:00:00Z",
+    "ownerReferences": [
+     {
+      "kind": "StatefulSet",
+      "name": "cache"
+     }
+    ]
+   },
+   "revision": 1,
+   "data": {
+    "spec": {
+     "template": {
+      "spec": {
+       "containers": [
+        {
+         "name": "redis",
+         "image": "redis:7.2"
+        }
+       ]
+      }
+     }
+    }
+   }
+  },
+  {
+   "metadata": {
+    "name": "cache-2",
+    "namespace": "shop",
+    "creationTimestamp": "2026-11-01T13:40:00Z",
+    "ownerReferences": [
+     {
+      "kind": "StatefulSet",
+      "name": "cache"
+     }
+    ]
+   },
+   "revision": 2,
+   "data": {
+    "spec": {
+     "template": {
+      "spec": {
+       "containers": [
+        {
+         "name": "redis",
+         "image": "redis:7.4"
+        }
+       ]
+      }
+     }
+    }
+   }
+  }
+ ]
+}

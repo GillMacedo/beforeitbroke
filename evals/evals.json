@@ -1,0 +1,35 @@
+[
+  {
+    "skills": ["finding-recent-changes"],
+    "query": "Checkout errors started at 14:32 UTC today. What changed before that?",
+    "expected_behavior": [
+      "Runs beforeitbroke.py with --at set to the incident time in UTC",
+      "Reports coverage before the changes, naming which cluster was read",
+      "Calls the closest changes leads, not the cause, and takes no rollback action"
+    ]
+  },
+  {
+    "skills": ["finding-recent-changes"],
+    "query": "Something broke this morning, what deployed?",
+    "expected_behavior": [
+      "Asks for the start time and timezone before running the script",
+      "Doesn't guess a time or treat a missing time as now"
+    ]
+  },
+  {
+    "skills": ["finding-recent-changes"],
+    "query": "kubectl gave a forbidden error on events, but the timeline shows no warnings. So were there no warnings?",
+    "expected_behavior": [
+      "Explains that PARTIAL coverage means events weren't read",
+      "Doesn't conclude that there were no warnings"
+    ]
+  },
+  {
+    "skills": ["finding-recent-changes"],
+    "query": "Write the timeline section of a postmortem for the incident at 2026-11-01T14:32:00Z in this repo.",
+    "expected_behavior": [
+      "Uses --format markdown",
+      "Marks any cause or action item it adds as a draft and invents no facts"
+    ]
+  }
+]
