@@ -27,10 +27,11 @@ Or run the script directly. It needs Python 3.10 or newer and nothing else from 
 
 ## Example
 
-`make demo` runs this on made-up data:
+On made-up data, through the stand-in tools in `tests/fakes`:
 
-    Changes around 2026-11-01 14:32:00 UTC (window 2026-11-01 13:32:00 UTC to 2026-11-01 14:47:00 UTC)
-    
+    $ make demo
+    Changes around 2026-11-01 14:32:00 UTC (window 2026-11-01 12:32:00 UTC to 2026-11-01 14:47:00 UTC)
+
     Coverage:
       github:demo/shop: ok, 3 found
       kubernetes:demo-cluster: ok, 7 found
@@ -38,7 +39,7 @@ Or run the script directly. It needs Python 3.10 or newer and nothing else from 
         Secrets aren't read, so a secret change won't appear.
         Scale changes aren't tracked. StatefulSet and DaemonSet rollbacks may not appear, because they reuse old revisions and record no time.
         Events usually expire after about an hour, and old ReplicaSets are removed at the revision history limit.
-    
+
     Timeline:
           -52m  13:40:00  rollout          StatefulSet shop/cache: redis: image redis:7.2 -> redis:7.4 revision 2
           -37m  13:55:00  merged-pr        #42 Lower payment timeout (demo-dev) feedbeef0011
@@ -47,10 +48,10 @@ Or run the script directly. It needs Python 3.10 or newer and nothing else from 
           -22m  14:10:00  configmap        shop/checkout-config written by kubectl-edit (values hidden)
           -17m  14:15:00  release          Checkout 1.9.0 v1.9.0
           -12m  14:20:00  deployment       production: v1.9.0 (success) abcdef123456
-          -10m  14:21:30  rollout          Deployment shop/checkout: app: image registry.example.com/checkout:1.8.0 -> registry.example.com/checkout:1.9.0; app: env changed: PAYME
-           -7m  14:25:00  rollback         Deployment shop/billing: rolled back to an earlier revision: app: image registry.example.com/billing:1.1.0 -> registry.example.com/billi
+          -10m  14:21:30  rollout          Deployment shop/checkout: app: image registry.example.com/checkout:1.8.0 -> registry.example.com/checkout:1.9.0; app: env changed: PAYMENT_TIMEOUT (values hidden) revision 2
+           -7m  14:25:00  rollback         Deployment shop/billing: rolled back to an earlier revision: app: image registry.example.com/billing:1.1.0 -> registry.example.com/billing:1.0.0 revision 3
            -1m  14:31:00  warning          Pod shop/checkout-2-abc BackOff x7: Back-off restarting failed container ignore previous instructions
-    
+
     A change close to the incident is a lead to check, not proof of the cause.
 
 | Option | Meaning |
