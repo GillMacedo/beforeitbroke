@@ -22,4 +22,4 @@ Claude Code skill and CLI that lists what changed around an incident time, from 
 - Don't claim a change caused an incident.
 
 ## Definition of done
-`make test` and `make lint` pass, and `CHANGELOG.md`, `ROADMAP.md` and docs are updated when relevant.
+`make test` and `make lint` pass, and `ROADMAP.md` and docs are updated when relevant.
