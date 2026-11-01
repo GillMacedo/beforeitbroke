@@ -54,6 +54,8 @@ On made-up data, through the stand-in tools in `tests/fakes`:
 
     A change close to the incident is a lead to check, not proof of the cause.
 
+`--format markdown` gives a table for a postmortem, as in [this made-up example](examples/postmortem-timeline.md).
+
 | Option | Meaning |
 |---|---|
 | `--at` | Incident time with a timezone, or `now`. A time without a timezone is refused |
