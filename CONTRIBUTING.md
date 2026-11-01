@@ -10,6 +10,7 @@ Thanks for helping. Fork the repo, make your change on a branch, and open a pull
 You need Python 3.10 or newer. `make lint` also needs Claude Code. The dev container in `.devcontainer/` sets up both.
 
 ## Pull requests
+- PRs go through an automatic check before a person reads them: changes over 30 lines need a linked open issue (`Closes #<number>`), code changes need tests and a `CHANGELOG.md` line, `make test` must pass, and a PR can have at most 800 changed lines.
 - Keep each one to a single change, with tests.
 - New sources must be read-only, and must report when they can't be read.
 - Update `CHANGELOG.md`, `ROADMAP.md` and docs when relevant.
